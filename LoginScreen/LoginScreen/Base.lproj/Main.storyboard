@@ -124,7 +124,13 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Login">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UBo-RN-w5h"/>
                                             <segue destination="cDT-MH-QHm" kind="show" id="22t-bR-7ek"/>
                                         </connections>
                                     </button>
@@ -146,6 +152,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Signup here">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signupButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ES0-cA-wxq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -172,6 +181,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uaK-f6-lc2"/>
+                    <connections>
+                        <outlet property="bottomBorderMailView" destination="flR-hD-E68" id="mph-M0-SYR"/>
+                        <outlet property="bottomBorderPasswordView" destination="jYb-kJ-OGa" id="tRq-t9-cok"/>
+                        <outlet property="loginButton" destination="R5l-6i-Nmd" id="WpJ-9f-g7n"/>
+                        <outlet property="mailTextField" destination="VBd-08-f3L" id="2jE-Zd-uwv"/>
+                        <outlet property="passwordTextField" destination="fuG-i0-Ojh" id="g9f-sF-lDK"/>
+                        <outlet property="signupButton" destination="GJc-gG-Yla" id="Vsx-OA-lDQ"/>
+                        <outlet property="signupDescriptionLabel" destination="Lrp-LK-9FT" id="Rsl-Jo-Xfy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
