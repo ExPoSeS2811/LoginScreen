@@ -124,6 +124,11 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Login">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="cDT-MH-QHm" kind="show" id="22t-bR-7ek"/>
                                         </connections>
@@ -172,6 +177,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uaK-f6-lc2"/>
+                    <connections>
+                        <outlet property="loginButton" destination="R5l-6i-Nmd" id="WpJ-9f-g7n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
