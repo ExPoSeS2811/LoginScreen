@@ -83,10 +83,10 @@ class ViewController: UIViewController {
     }
     
     private func showErrorAlert() {
-        let alertController = UIAlertController(title: "Ошибка",
-                                                message: "Неправильный адрес электронной почты или пароль",
+        let alertController = UIAlertController(title: "Error".localized,
+                                                message: "Wrong email address or password".localized,
                                                 preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "ОК", style: .default))
+        alertController.addAction(UIAlertAction(title: "OK".localized, style: .default))
         present(alertController, animated: true)
     }
 }
@@ -122,3 +122,9 @@ extension ViewController: UITextFieldDelegate {
         }
     }
 }
+
+/*
+ "Error" = "Ошибка"
+ "Wrong email address or password" = "Неправильный адрес электронной почты или пароль"
+ "OK" = "OK"
+ */
