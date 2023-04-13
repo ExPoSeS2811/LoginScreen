@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     
     let colorInvalidEnteredData: UIColor = .red
     let colorValidEnteredData: UIColor = .systemGray
+    let defaultColor: UIColor = (UIColor(named: "logo") ?? (.systemIndigo))
+    let turnedOffColor: UIColor = .lightGray
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -63,10 +65,13 @@ class ViewController: UIViewController {
     // MARK: - Methods
     private func setupLoginButton() {
         // Add shadow
-        loginButton.layer.shadowColor = (UIColor(named: "logo") ?? (UIColor.systemIndigo)).cgColor
+        loginButton.layer.shadowColor = defaultColor.cgColor
         loginButton.layer.shadowOffset = CGSize(width: 0, height: 4)
         loginButton.layer.shadowOpacity = 1
         loginButton.layer.shadowRadius = 4
+        
+        loginButton.isUserInteractionEnabled = false
+        loginButton.backgroundColor = colorValidEnteredData
     }
     
     private func errorTextField(textField: UITextField) {
@@ -105,6 +110,7 @@ extension ViewController: UITextFieldDelegate {
                 bottomBorderEmailView.backgroundColor = colorValidEnteredData
                 envelopImageView.tintColor = colorValidEnteredData
             } else {
+                loginScreenViewModel.enteredEmail = ""
                 errorTextField(textField: textField)
             }
         case passwordTextField:
@@ -115,11 +121,16 @@ extension ViewController: UITextFieldDelegate {
                 bottomBorderPasswordView.backgroundColor = colorValidEnteredData
                 lockImageView.tintColor = colorValidEnteredData
             } else {
+                loginScreenViewModel.enteredPassword = ""
                 errorTextField(textField: textField)
             }
         default:
             print("Unknown")
         }
+        
+        let isEmptyEmailAndPassword =  (loginScreenViewModel.enteredEmail.isEmpty || loginScreenViewModel.enteredPassword.isEmpty)
+        loginButton.isUserInteractionEnabled = !isEmptyEmailAndPassword
+        loginButton.backgroundColor = !isEmptyEmailAndPassword ? defaultColor : colorValidEnteredData
     }
 }
 
