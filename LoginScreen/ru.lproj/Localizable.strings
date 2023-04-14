@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  LoginScreen
+
+  Created by MacBook Pro 13 2019 on 4/13/23.
+  
+*/
+
+"Error" = "Ошибка";
+"Wrong email address or password" = "Неправильный адрес электронной почты или пароль";
+"OK" = "OK";
